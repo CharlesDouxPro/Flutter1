@@ -1,13 +1,30 @@
 import 'package:flutter/material.dart';
 
 class MySquare extends StatelessWidget {
-  const MySquare({super.key});
+  final String title;
+  final VoidCallback onPressed;
+  final Key? key;
+
+  const MySquare({
+    required this.title,
+    required this.onPressed,
+    this.key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Container(height: 200, color: Colors.deepPurple[200]),
+    return InkWell(
+      onTap: onPressed,
+      child: Container(
+        height: 100,
+        color: Colors.deepPurple[200],
+        child: Center(
+          child: Text(
+            title,
+            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+        ),
+      ),
     );
   }
 }

@@ -1,95 +1,144 @@
 import 'package:flutter/material.dart';
 import 'Square.dart';
-import 'package:mvpsa/main.dart';
 
 import 'first_page.dart';
+import 'second_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
-        child: Container(
-          color: Colors.black87,
-          child: ListView(
-            children: [
-              const DrawerHeader(
-                child: Center(
-                  child: Text(
-                    "L O G O",
-                    style: TextStyle(fontSize: 35),
+        drawer: Drawer(
+          child: Container(
+            color: Colors.black87,
+            child: ListView(
+              children: [
+                const DrawerHeader(
+                  child: Center(
+                    child: Text(
+                      "L O G O",
+                      style: TextStyle(fontSize: 35),
+                    ),
                   ),
                 ),
-              ),
-              ListTile(
-                leading: const Icon(Icons.school),
-                title: const Text(
-                  "School",
-                  style: TextStyle(fontSize: 30, color: Colors.white),
+                ListTile(
+                  leading: const Icon(Icons.school),
+                  title: const Text(
+                    "School",
+                    style: TextStyle(fontSize: 30, color: Colors.white),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const FirstPage()));
+                  },
                 ),
-                onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const FirstPage()));
-                },
-              ),
-              ListTile(
-                leading: const Icon(Icons.school),
-                title: const Text(
-                  "Events",
-                  style: TextStyle(fontSize: 30, color: Colors.white),
+                ListTile(
+                  leading: const Icon(Icons.school),
+                  title: const Text(
+                    "Events",
+                    style: TextStyle(fontSize: 30, color: Colors.white),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const SecondPage()));
+                  },
                 ),
-                onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const SecondPage()));
-                },
-              ),
-            ],
-          ),
-        ),
-      ),
-      body: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            backgroundColor: Colors.black87,
-            expandedHeight: 300,
-            floating: false,
-            pinned: true,
-            flexibleSpace: FlexibleSpaceBar(
-              background: Image.network(
-                  "https://elovart.com/sites/default/files/images/eshop/photo/2018-04/6_paris_tour_eiffel_de_nuit.jpg"),
-              centerTitle: true,
-              title: const Text(
-                "P A R I S",
-                style: TextStyle(
-                  fontSize: 30, // Taille de police agrandie
-                  fontWeight: FontWeight.bold, // Gras
-                  // Espacement entre les lettres
-                ),
-              ),
-            ),
-          ),
-
-          //Sliver Items
-          const SliverToBoxAdapter(
-            child: Column(
-              children: [
-                MySquare(),
-                MySquare(),
-                MySquare(),
-                MySquare(),
-                MySquare(),
-                MySquare(),
-                MySquare(),
-                MySquare(),
-                MySquare(),
-                MySquare(),
               ],
             ),
           ),
-        ],
-      ),
-    );
+        ),
+        body: CustomScrollView(
+          slivers: [
+            SliverAppBar(
+              backgroundColor: Colors.black87,
+              expandedHeight: 300,
+              floating: false,
+              pinned: true,
+              flexibleSpace: FlexibleSpaceBar(
+                background: Image.network(
+                    "https://elovart.com/sites/default/files/images/eshop/photo/2018-04/6_paris_tour_eiffel_de_nuit.jpg"),
+                centerTitle: true,
+                title: const Text(
+                  "P A R I S",
+                  style: TextStyle(
+                    fontSize: 30, // Taille de police agrandie
+                    fontWeight: FontWeight.bold, // Gras
+                    // Espacement entre les lettres
+                  ),
+                ),
+              ),
+            ),
+
+            //Sliver Items
+            SliverToBoxAdapter(
+              child: Column(
+                children: [
+                  MySquare(
+                    title: 'Article 1',
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const SecondPage(),
+                        ),
+                      );
+                    },
+                  ),
+                  MySquare(
+                    title: 'Article 2',
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const SecondPage(),
+                        ),
+                      );
+                    },
+                  ),
+                  MySquare(
+                    title: 'Article 3',
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const SecondPage(),
+                        ),
+                      );
+                    },
+                  ),
+                  MySquare(
+                    title: 'Article 4',
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const SecondPage(),
+                        ),
+                      );
+                    },
+                  ),
+                  MySquare(
+                    title: 'Article 5',
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const SecondPage(),
+                        ),
+                      );
+                    },
+                  ),
+                  MySquare(
+                    title: 'Article 6',
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const SecondPage(),
+                        ),
+                      );
+                    },
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ));
   }
 }
 /** 
