@@ -74,66 +74,7 @@ class HomePage extends StatelessWidget {
             SliverToBoxAdapter(
               child: Column(
                 children: [
-                  MySquare(
-                    title: 'Article 1',
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const SecondPage(),
-                        ),
-                      );
-                    },
-                  ),
-                  MySquare(
-                    title: 'Article 2',
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const SecondPage(),
-                        ),
-                      );
-                    },
-                  ),
-                  MySquare(
-                    title: 'Article 3',
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const SecondPage(),
-                        ),
-                      );
-                    },
-                  ),
-                  MySquare(
-                    title: 'Article 4',
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const SecondPage(),
-                        ),
-                      );
-                    },
-                  ),
-                  MySquare(
-                    title: 'Article 5',
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const SecondPage(),
-                        ),
-                      );
-                    },
-                  ),
-                  MySquare(
-                    title: 'Article 6',
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const SecondPage(),
-                        ),
-                      );
-                    },
-                  ),
+                  HorizontalDropDown(),
                 ],
               ),
             ),
