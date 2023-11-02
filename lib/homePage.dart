@@ -74,7 +74,9 @@ class HomePage extends StatelessWidget {
             SliverToBoxAdapter(
               child: Column(
                 children: [
-                  HorizontalDropDown(),
+                  HorizontalDropDown("Art"),
+                  HorizontalDropDown1("Restaurant"),
+                  HorizontalDropDown2("Bar"),
                 ],
               ),
             ),
