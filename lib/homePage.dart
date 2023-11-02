@@ -14,12 +14,9 @@ class HomePage extends StatelessWidget {
             color: Colors.black87,
             child: ListView(
               children: [
-                const DrawerHeader(
+                DrawerHeader(
                   child: Center(
-                    child: Text(
-                      "L O G O",
-                      style: TextStyle(fontSize: 35),
-                    ),
+                    child: Image.asset("Images/logodet.png"),
                   ),
                 ),
                 ListTile(
